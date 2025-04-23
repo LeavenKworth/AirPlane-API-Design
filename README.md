@@ -3,6 +3,8 @@
 
 ![EntityRelationDiagram](https://github.com/user-attachments/assets/85a6c3f9-9231-4ee8-af5f-588188b67064)
 
+https://drive.google.com/file/d/1CUrU1w0DSTOEvM_rDAr18bV7aX_7wi80/view?usp=sharing
+
 http://airplane-web-api-bkefgjaabkcwa2df.italynorth-01.azurewebsites.net/swagger/index.html
 
 The video could not be loaded because the video size is too large.
