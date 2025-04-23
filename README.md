@@ -106,4 +106,93 @@ You can import the Postman collection file (`Airline_Ticketing_API.postman_colle
 5. Run the application using:
    ```
    java -jar airline-ticketing-0.0.1-SNAPSHOT.jar
-   ``` 
+   ```
+
+   I used spring boot for the first time and since it was my first time writing an API I encountered a lot of errors, mistakes and confusion.
+
+Even though it is not a perfect project I think I have created a good project.
+
+🔧Technologies Used Java 17
+
+Spring Boot
+
+Spring Data JPA (Hibernate)
+
+Spring Security (JWT)
+
+MySQL
+
+Maven
+
+📚Features Add, list, and search flights
+
+Purchase tickets
+
+Perform check-in
+
+List passengers
+
+Secure login with JWT
+
+🔐Default Admin User ( It is not working) Username: Admin
+
+Password: 1234
+
+🚀Run the Project Update your MySQL info in application.properties.
+
+Create the database (tables will be auto-generated).
+
+Run the project from an IDE
+
+📁API Endpoints
+
+Method Endpoint Description POST /auth/login Login using JWT
+
+GET /flights List all flights
+
+POST /flights Create a new flight
+
+POST /tickets Buy a ticket
+
+POST /checkin Perform a check-in
+
+GET /passanger List of passengers of seats
+
+⚠️ Challenges Faced
+
+1-)Database Connection Issues Incorrect URL, username, or password in application.properties.
+MySQL not running or running on another port.
+
+2-)JPA Mapping Issues Wrong @OneToMany or @ManyToOne mappings can cause recursion.
+Infinite loops and StackOverflowError if DTO is not used.
+
+Incorrect boolean mapping (int vs tinyint(1) in MySQL).
+
+3-)Spring Security & JWT Problems JWT not generated or not passed correctly in headers.
+Getting 403 Forbidden or 401 Unauthorized errors.
+
+BadCredentialsException due to plain text password.
+
+NoSuchBeanDefinitionException due to missing config classes.
+
+4-)Missing Validation No @Valid, @NotNull, or @Size annotations leads to silent failures.
+API may accept invalid or null data without proper feedback.
+
+5-)Unique Constraints in DB Adding duplicate entries (e.g., flight number) causes exceptions.
+Use @Column(unique = true) for usernames, emails, etc.
+
+6-)Check-in Logic Errors Allowing multiple check-ins for the same ticket.
+Not validating ticket ownership or status before check-in.
+
+7-)DTO vs Entity Confusion Without DTO, JSON responses may be deeply nested or infinite.
+Missing @JsonIgnore, @JsonManagedReference can break JSON serialization.
+
+8-)Data Update Problems save() might not trigger immediate DB update, use saveAndFlush() when needed.
+Missing @Transactional can prevent data from persisting.
+
+Missing Swagger/OpenAPI Harder to test endpoints.
+Swagger helps visualize and test REST APIs easily.
+
+API Endpoints
+
+Method Endpoint Description POST /auth/login Login using JWT GET /flights List all flights POST /flights Create a new flight POST /tickets Buy a ticket POST /checkin Perform a check-in
